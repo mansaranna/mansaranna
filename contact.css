@@ -1,0 +1,169 @@
+body {
+    background-image: url('images/background.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Makes the background fixed during scroll */
+    color: white; /* Makes sure text is readable on top of the image */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(28, 28, 28, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Menu Icon */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    background-color: white;
+    height: 4px;
+    width: 100%;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #187700;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Full screen minus navigation bar */
+    padding: 20px;
+    color: white;
+}
+
+.about-content {
+    max-width: 800px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%; /* Full height */
+    width: 250px; /* Sidebar width */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start off-screen */
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s; /* Smooth slide-in transition */
+    padding-top: 60px;
+    z-index: 1000; /* Ensure it sits above other elements */
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    display: block;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Icon styles inside sidebar */
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.5rem; /* Adjust icon size */
+}
+
+/* Show sidebar */
+.sidebar.active {
+    left: 0;
+}
+
+/* Overlay when the sidebar is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    z-index: 900; /* Below the sidebar but above other elements */
+}
+
+/* Show overlay */
+.overlay.active {
+    display: block;
+}
+
+/* Menu Icon stays on top */
+.menu-icon {
+    position: relative;
+    z-index: 1100; /* Ensure the menu icon is above both the overlay and sidebar */
+    cursor: pointer;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    gap: 15px; /* Space between icons */
+    padding: 20px;
+    background-color: #000000; /* Optional: Change background if needed */
+  }
+  
+  .social-icons img {
+    width: 40px; /* Adjust size of icons */
+    height: 40px;
+    transition: transform 0.3s ease; /* Adds a hover effect */
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2); /* Slightly enlarges the icons on hover */
+  }
+  

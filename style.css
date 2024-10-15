@@ -1,0 +1,473 @@
+body {
+    background-image: url('images/background.png'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Default Navbar Style (Dark Mode) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1c1c1c;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    color: white;
+}
+
+/* Navbar Links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #9b51e0; /* Hover effect */
+}
+
+/* Navbar for Light Mode */
+body.light-mode nav {
+    background-color: #f0f0f0;  /* Light background */
+    color: black;
+}
+
+body.light-mode .nav-links a {
+    color: black;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #6a0dad; /* Different hover effect for light mode */
+}
+
+/* Theme Toggle in Navbar */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle i {
+    color: white;
+    margin: 0 5px;
+    font-size: 1.2rem;
+}
+
+body.light-mode .theme-toggle i {
+    color: black;
+}
+
+/* Light/Dark Mode Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    left: 5px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #187700;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+
+
+
+/* Menu Icon */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    background-color: white;
+    height: 4px;
+    width: 100%;
+}
+
+/* Menu Icon (default: dark mode) */
+.menu-icon div {
+    background-color: white; /* Default color for dark mode */
+    height: 4px;
+    width: 100%;
+}
+
+/* Menu Icon for Light Mode */
+body.light-mode .menu-icon div {
+    background-color: black; /* Color change for light mode */
+}
+
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #187700;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none; /* Remove default underlining from all links */
+    padding: 5px;
+    color: #333;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  nav ul li a.active {
+    text-decoration: underline; /* Apply underline */
+    text-decoration-color: #187700; /* Set underline color (e.g., tomato) */
+    font-weight: bold; /* Optional: Make the active link bold */
+  }
+
+/* Header Section */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(77, 75, 80, 0.9);
+    color: #ffffff;
+    height: 200px;
+    border-radius: 20px;
+    margin: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 20px;
+    background-image: url('images/header-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Smooth transition for background, text, and other elements */
+body {
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* Navbar transitions */
+nav {
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* Menu Icon Transition */
+.menu-icon div {
+    transition: background-color 1s ease;
+}
+
+/* Navbar links transition */
+.nav-links a {
+    transition: color 1s ease;
+}
+
+/* Image transition (if needed) */
+.image-box img {
+    transition: transform 1s ease, filter 1s ease;
+}
+
+/* Other elements (like buttons, etc.) */
+button, .theme-toggle {
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* Scroll to Top Button Styles */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1c1c1c; /* Dark background */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #187700; /* Hover effect */
+}
+
+body.light-mode .scroll-to-top-btn {
+    background-color: #f0f0f0; /* Light mode background */
+    color: black;
+}
+
+body.light-mode .scroll-to-top-btn:hover {
+    background-color: #187700; /* Hover effect in light mode */
+}
+
+
+
+.header-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Ensure text is above the background */
+.header-text, .greeting-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Greeting Text */
+.greeting-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+.image-box {
+    background-color: rgb(24, 119, 0);
+    color: white;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    opacity: 0; /* Hidden by default */
+    transform: translateY(50px); /* Offscreen effect */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animation */
+.image-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Existing styles remain unchanged */
+
+/* Hover Effect on Image */
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Darken image on hover */
+.image-box img:hover {
+    filter: brightness(70%); /* Darkens the image */
+}
+
+/* Enlarge Image on Click (Lightbox Effect) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Higher than other elements */
+}
+
+.modal img {
+    width: 80%; /* Enlarge image */
+    max-width: 800px; /* Maximum width */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Close Button for Modal */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #187700;
+}
+
+/* Existing styles remain unchanged */
+
+/* Hover Effect on Image */
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom effect */
+    transform-origin: center; /* Ensure image zooms from center */
+}
+
+/* Darken and Zoom on Hover */
+.image-box img:hover {
+    filter: brightness(70%); /* Darken the image */
+    transform: scale(1.2); /* Zoom in the image by 20% */
+}
+
+/* Adding style for cursor follow effect */
+.image-box {
+    position: relative;
+    overflow: hidden; /* Ensure the image doesn't overflow out of the container */
+}
+
+/* Slight movement with the cursor */
+.image-box img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transformation */
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%; /* Full height */
+    width: 250px; /* Sidebar width */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start off-screen */
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s; /* Smooth slide-in transition */
+    padding-top: 60px;
+    z-index: 1000; /* Ensure it sits above other elements */
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    display: block;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Icon styles inside sidebar */
+.sidebar a i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.5rem; /* Adjust icon size */
+}
+
+/* Show sidebar */
+.sidebar.active {
+    left: 0;
+}
+
+/* Overlay when the sidebar is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    z-index: 900; /* Below the sidebar but above other elements */
+}
+
+/* Show overlay */
+.overlay.active {
+    display: block;
+}
+
+/* Menu Icon stays on top */
+.menu-icon {
+    position: relative;
+    z-index: 1100; /* Ensure the menu icon is above both the overlay and sidebar */
+    cursor: pointer;
+}
